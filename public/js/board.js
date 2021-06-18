@@ -3,13 +3,12 @@ $(document).ready(() => {
 });
 
 var online = "online";
-var notifyBookingFlag=false;
+var notifyBookingFlag = false;
 
 function drawBoard() {
   //fill current date
-  if(sessionStorage.getItem("statistician")=="statistician")
-  {
-	window.location.replace("notallowed.html");
+  if (sessionStorage.getItem("statistician") == "statistician") {
+    window.location.replace("notallowed.html");
   }
 
   const todayDate = new Date();
@@ -18,7 +17,7 @@ function drawBoard() {
   const monthNumber = todayDate.getMonth() + 1;
   const monthStr = monthNumber < 10 ? '0' + monthNumber : monthNumber.toString();
   document.getElementById('todayDate').innerHTML = `Date: ${todayDate.getFullYear()}-${monthStr}-${dayStr}`
-  document.getElementById('todayDate').style.color="black";
+  document.getElementById('todayDate').style.color = "black";
 
 
   const xhr = new XMLHttpRequest();
@@ -57,13 +56,13 @@ function drawBoard() {
               bookingBtn.classList.add('nextMonth');
 
             const booking = bookings.find(b =>
-                b.slot === s &&
-                isEqualDate(
-                    b.day,
-                    todayDate.getFullYear(),
-                    isNextMonthDay ? todayDate.getMonth() + 2 : todayDate.getMonth() + 1,
-                    d,
-                )
+              b.slot === s &&
+              isEqualDate(
+                b.day,
+                todayDate.getFullYear(),
+                isNextMonthDay ? todayDate.getMonth() + 2 : todayDate.getMonth() + 1,
+                d,
+              )
             );
 
             if (booking) {
@@ -110,97 +109,85 @@ function getDayOfTheMonth(day) {
 
 function isEqualDate(stringDate, year, month, day) {
   return parseInt(stringDate.substr(0, 4)) === year
-      && parseInt(stringDate.substr(5, 2)) === month
-      && parseInt(stringDate.substr(8, 2)) === day;
+    && parseInt(stringDate.substr(5, 2)) === month
+    && parseInt(stringDate.substr(8, 2)) === day;
 }
 
 
 function sleep(ms) {
-	return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function testConnection (btn, tavlaAuth) {
-	const xhr = new XMLHttpRequest();
-	var URL = `${config.backendUrl}` + "/helloworld";
-	xhr.open("GET", URL);
-    xhr.onload = function(){
-		if(online=="offline")
-		{
-			online = "online";
-			document.getElementById('todayDate').innerHTML = "Back online";
-			document.getElementById('todayDate').style.color="green";
-            btn.classList.remove('offlineBooking');
-		}
-		clickBookingDayPartTwo (btn, tavlaAuth);
-	}
-    xhr.onerror = async function(){
-		online = "offline";
-		if(notifyBookingFlag==false)
-		{
-            btn.classList.add('offlineBooking');
-			notifyBookingFlag=true;
-			alert("It looks like you are offline. We will save the booking locally and try to send it as soon as you are back online. Please don't close this tab until we confirmed the booking.");
-		}
-		await sleep(2000);
-		testConnection(btn, tavlaAuth);
+async function testConnection(btn, tavlaAuth) {
+  const xhr = new XMLHttpRequest();
+  var URL = `${config.backendUrl}` + "/helloworld";
+  xhr.open("GET", URL);
+  xhr.onload = function () {
+    if (online == "offline") {
+      online = "online";
+      document.getElementById('todayDate').innerHTML = "Back online";
+      document.getElementById('todayDate').style.color = "green";
+      btn.classList.remove('offlineBooking');
     }
-    console.log("Making a Request to " + config.backendUrl);
-    xhr.send();
+    clickBookingDayPartTwo(btn, tavlaAuth);
+  }
+  xhr.onerror = async function () {
+    online = "offline";
+    if (notifyBookingFlag == false) {
+      btn.classList.add('offlineBooking');
+      notifyBookingFlag = true;
+      alert("It looks like you are offline. We will save the booking locally and try to send it as soon as you are back online. Please don't close this tab until we confirmed the booking.");
+    }
+    await sleep(2000);
+    testConnection(btn, tavlaAuth);
+  }
+  console.log("Making a Request to " + config.backendUrl);
+  xhr.send();
 }
 
 async function clickBookingDay(btn) {
-	const tavlaAuth = sessionStorage.getItem('tavlaAuth');
-	if (!tavlaAuth) {
-		window.location.href = "login.html";
-		return;
-	}
-	if(online=="offline")
-	{
-		alert("You can not make multiple offline bookings. If you are not happy with the previous booking, please close this tab.");
-	}
-	else
-	{
-		testConnection(btn, tavlaAuth);
-	}
+  const tavlaAuth = sessionStorage.getItem('tavlaAuth');
+  if (!tavlaAuth) {
+    window.location.href = "login.html";
+    return;
+  }
+  if (online == "offline") {
+    alert("You can not make multiple offline bookings. If you are not happy with the previous booking, please close this tab.");
+  } else {
+    testConnection(btn, tavlaAuth);
+  }
 }
 
-function clickBookingDayPartTwo (btn, tavlaAuth) {
+function clickBookingDayPartTwo(btn, tavlaAuth) {
 
-	const bookings = JSON.parse(sessionStorage.getItem('bookings'));
-	const unitNo = sessionStorage.getItem('unitNo');
+  const bookings = JSON.parse(sessionStorage.getItem('bookings'));
+  const unitNo = sessionStorage.getItem('unitNo');
 
-	const d = parseInt(btn.id.substr(1).split('-')[0]);
-	const s = parseInt(btn.id.substr(1).split('-')[1]);
-	const todayDate = new Date();
+  const d = parseInt(btn.id.substr(1).split('-')[0]);
+  const s = parseInt(btn.id.substr(1).split('-')[1]);
+  const todayDate = new Date();
 
-	const y = todayDate.getFullYear();
-	const yyyy = y.toString();
-	const m = d < todayDate.getDate() ? todayDate.getMonth() + 2 : todayDate.getMonth() + 1;
-	const mm = m < 10 ? `0${m}` : `${m}`;
-	const dd = d < 10 ? `0${d}` : `${d}`;
-	const bookingDay = `${yyyy}-${mm}-${dd}`;
+  const y = todayDate.getFullYear();
+  const yyyy = y.toString();
+  const m = d < todayDate.getDate() ? todayDate.getMonth() + 2 : todayDate.getMonth() + 1;
+  const mm = m < 10 ? `0${m}` : `${m}`;
+  const dd = d < 10 ? `0${d}` : `${d}`;
+  const bookingDay = `${yyyy}-${mm}-${dd}`;
 
-	const findBooking = bookings.find(b => b.slot === s && isEqualDate(b.day, y, m, d));
+  const findBooking = bookings.find(b => b.slot === s && isEqualDate(b.day, y, m, d));
 
-	const isAdmin = sessionStorage.getItem('username') === 'admin';
-	if (findBooking)
-	{
-		if (findBooking.unitNo === unitNo)
-		{
-			deleteBooking(tavlaAuth);
-		}
-		else if (isAdmin)
-		{
-			if (confirm("Are you sure to delete this booking?"))
-			{
-				deleteBookingByAdmin(tavlaAuth, btn.username);
-			}
-		}
-	}
-	else if (!isAdmin)
-	{
-		changeBooking(tavlaAuth, bookingDay, s);
-	}
+  const isAdmin = sessionStorage.getItem('username') === 'admin';
+  if (findBooking) {
+    if (findBooking.unitNo === unitNo) {
+      deleteBooking(tavlaAuth);
+    } else if (isAdmin) {
+      if (confirm("Are you sure to delete this booking?")) {
+        deleteBookingByAdmin(tavlaAuth, btn.username);
+      }
+    }
+  } else if (!isAdmin) {
+    changeBooking(tavlaAuth, bookingDay, s);
+  }
 }
 
 function deleteBooking(auth) {
@@ -254,7 +241,7 @@ function changeBooking(auth, day, slot) {
   xhr.open('POST', `${config.backendUrl}/api/board`);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.setRequestHeader('Authorization', auth);
-  const data = JSON.stringify({ day, slot });
+  const data = JSON.stringify({day, slot});
   console.log("Making a Request to " + config.backendUrl);
   xhr.send(data);
 }
