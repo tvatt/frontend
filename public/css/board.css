@@ -1,0 +1,99 @@
+html {
+    height: 80%;
+}
+
+body {
+    height: 100%;
+	background-color: #b79f35;
+}
+/*Following used for testing and displaying borders to the table, shouldn't be used in prod*/
+/*
+table, td, th{
+	border: 1px solid black;
+}
+*/
+
+table {
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+}
+
+td, th{
+    width: 5.882%;
+    cursor: default;
+	text-align: center;
+}
+th{
+	height: 5%;
+}
+td{
+	height: 8%;
+}
+
+
+.BookingBtn {
+	background-image: url(../res/ButtonLockHolder.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	padding: 5px;
+
+    width: 75%;
+    height: 75%;
+    cursor: pointer;
+    border-radius: 0px;
+	border-color: transparent;
+	padding-bottom: 90%;
+	color: white;
+}
+
+.BookingBtn:Hover {
+	background-image: url(../res/ButtonLock.png);
+    width: 73%;
+    height: 100%;
+    cursor: pointer;
+}
+
+
+.hidden {
+    visibility: hidden;
+}
+
+.nextMonth {
+    background-image: url(../res/ButtonLockHolderNextMonth.png);
+}
+
+.booked {
+    background-image: url(../res/ButtonLockOther.png);
+    width: 73%;
+    height: 100%;
+	cursor: not-allowed;
+}
+
+.booked:Hover{
+	background-image: url(../res/ButtonLockOther.png);
+	cursor: not-allowed;
+}
+
+.bookedToMe {
+    background-image: url(../res/ButtonLock.png);
+    width: 73%;
+    height: 100%;
+    cursor: pointer;
+}
+.bookedToMe:Hover{
+	background-image: url(../res/ButtonLock.png);
+    width: 73%;
+    height: 100%;
+    cursor: pointer;
+}
+.offlineBooking {
+    background-image: url(../res/ButtonLockOffline.png);
+    width: 73%;
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+}

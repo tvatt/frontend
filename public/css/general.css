@@ -1,0 +1,163 @@
+/* GENERAL */
+.body {
+	height: 100%;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+}
+body {
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	background-color: #b79f35;
+}
+/* CONTAINER */
+.container {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+}
+
+/*  TOP HEADER WRAPPER */
+.headerWrapper {
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+/* Top Bar */
+.topBar {
+    padding: 0px;
+    margin: 0px;
+    height: 120px;
+    width: 100%;
+    background-color: black;
+}
+
+#websiteHeader {
+    position: absolute;
+    padding-left: 12px;
+    left: 10px;
+    top: 72px;
+    font-size: 22px;
+    color: white;
+}
+
+/* Navigation Menu */
+.navigation {
+    width: 100%;
+}
+
+ul {
+    min-width: 200px;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+    border: 1px solid black;
+    color: white;
+    text-align: center;
+}
+
+li a:hover {
+    border-color: #2F4858;
+    background-color: white;
+    color: black;
+}
+
+#usernameLabel a:hover {
+    border-color: black;
+    background-color: black;
+    color: white;
+}
+
+#aboutPage {
+    float: left;
+}
+
+#boardOneMonthPage {
+    float: left;
+}
+
+.selected {
+    background-color: #135F6B;
+}
+
+#currentPage a {
+    color: black;
+}
+
+/* CONTENT WRAPPER */
+.contentWrapper {
+    overflow: auto;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: auto auto 10px;
+}
+
+/* Main Content */
+.mainContent {
+    width: 56%;
+    min-width: 870px;
+    margin-bottom: 0px;
+    padding: 20px 30px 0px;
+    overflow: hidden;
+    border-radius: 0px 0px 20px 20px;
+    background-color: #749845;
+	/*
+	border: 2px solid #2F4858;
+	*/
+}
+
+.bigBlueButton {
+    height: 45px;
+    margin-bottom: 25px;
+    background-color: #135F6B;
+    font-weight: bold;
+    font-size: 150%;
+	color:white;
+    border-radius: 3px;
+    border: 2px solid #2F4858;
+    margin-top: 1em;
+	text-align:center;
+}
+
+/* Text Paragraphs */
+#textSection {
+    min-width: 870px;
+    max-width: 900px;
+    margin: 0 auto 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Left Sidebar */
+.sidebarLeft {
+    width: 22%;
+    padding: 0px;
+    overflow: hidden;
+}
+
+/* Right Sidebar */
+.sidebarRight {
+    width: 22%;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.gone {
+    display: none;
+}

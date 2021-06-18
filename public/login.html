@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/config.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/accountManagement.js"></script>
+</head>
+
+<body>
+<!-- main container -->
+<div class="container">
+    <!-- header wrapper -->
+    <div class="headerWrapper">
+        <!-- navigation bar -->
+        <div class="navigation">
+            <ul>
+                <li id="logout"><a href="login.html" onclick="logout()">Log out</a></li>
+                <li id="loginPage" class="selected"><a href="login.html">Log In</a></li>
+                <li id="controlPanelPage"><a href="adminPanel.html">Control Panel</a></li>
+				<li id="statisticsPage"><a href="statistics.html">Statistics</a></li>
+                <li id="profilePage"><a href="profile.html">My Profile</a></li>
+                <li id="usernameLabel"><a></a></li>
+                <li id="boardOneMonthPage"><a href="board.html">Board</a></li>
+                <li id="aboutPage"><a href="about.html">About Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- content wrapper -->
+    <div class="contentWrapper">
+        <!-- sidebar left-->
+        <div class="sidebarLeft">
+        </div>
+
+        <!-- main content -->
+        <div class="mainContent">
+            <section id="textSection">
+                <div id="logInForm">
+                    <h1>Log In</h1>
+                    <label for="usernameInput">User Name:</label>
+                    <input id="usernameInput" class="inputField" type="text" name="username" autofocus>
+
+                    <label id="passwordLabel" for="passwordInput">Password:</label>
+                    <input id="passwordInput" class="inputField" type="password" name="password">
+
+                    <span class="hidden" id="loginWarning">Invalid username or password!</span>
+
+                    <input id="submit" onclick="login()" class="bigBlueButton" value="Log In">
+					<script>
+						var inputText = document.getElementById("passwordInput");
+						inputText.addEventListener("keyup", function(event) {
+							if (event.keyCode === 13) {
+								event.preventDefault();
+								document.getElementById("submit").click();
+							}
+						});
+					</script>
+                </div>
+            </section>
+        </div>
+
+        <!-- sidebar right-->
+        <div class="sidebarRight">
+        </div>
+    </div>
+</div>
+
+<!-- footer -->
+<footer>
+</footer>
+
+</body>
+</html>

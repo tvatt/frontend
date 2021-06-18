@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/general.css">
+    <title>Board</title>
+    <script src="js/config.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/board.js"></script>
+	<script src="js/accountManagement.js"></script>
+</head>
+
+<body>
+<div class="navigation">
+    <ul>
+        <li id="logout"><a href="login.html" onclick="logout()">Log out</a></li>
+        <li id="loginPage"><a href="login.html">Log In</a></li>
+        <li id="controlPanelPage"><a href="adminPanel.html">Control Panel</a></li>
+		<li id="statisticsPage"><a href="statistics.html">Statistics</a></li>
+        <li id="profilePage"><a href="profile.html">My Profile</a></li>
+        <li id="usernameLabel"><a></a></li>
+        <li id="boardOneMonthPage" class="selected"><a href="board.html">Board</a></li>
+        <li id="aboutPage"><a href="about.html">About Us</a></li>
+    </ul>
+</div>
+<h2 id="todayDate">Date: </h2>
+<table id="boardTable">
+    <tr height="20px">
+        <th>
+        <th>1
+        <th>2
+        <th>3
+        <th>4
+        <th>5
+        <th>6
+        <th>7
+        <th>8
+        <th>9
+        <th>10
+        <th>11
+        <th>12
+        <th>13
+        <th>14
+        <th>15
+
+    <tr>
+        <th>07-12
+        <td>
+            <button class="BookingBtn" id="b1-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b2-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b3-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b4-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b5-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b6-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b7-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b8-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b9-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b10-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b11-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b12-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b13-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b14-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b15-1" onclick="clickBookingDay(this)"></button>
+        <!-- caching the offline button asset -->
+       <td>
+            <button class="BookingBtn" id="assetLoader" style="width: 0px; height: 0px;"></button>
+
+    <tr>
+        <th>12-17
+        <td>
+            <button class="BookingBtn" id="b1-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b2-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b3-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b4-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b5-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b6-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b7-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b8-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b9-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b10-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b11-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b12-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b13-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b14-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b15-2" onclick="clickBookingDay(this)"></button>
+
+    <tr>
+        <th>17-22
+        <td>
+            <button class="BookingBtn" id="b1-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b2-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b3-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b4-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b5-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b6-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b7-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b8-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b9-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b10-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b11-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b12-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b13-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b14-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b15-3" onclick="clickBookingDay(this)"></button>
+
+	<tr>
+    <tr>
+        <th>
+        <th>16
+        <th>17
+        <th>18
+        <th>19
+        <th>20
+        <th>21
+        <th>22
+        <th>23
+        <th>24
+        <th>25
+        <th>26
+        <th>27
+        <th>28
+        <th>29
+        <th>30
+        <th>31
+
+    <tr>
+        <th>07-12
+        <td>
+            <button class="BookingBtn" id="b16-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b17-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b18-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b19-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b20-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b21-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b22-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b23-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b24-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b25-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b26-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b27-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b28-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b29-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b30-1" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b31-1" onclick="clickBookingDay(this)"></button>
+
+    <tr>
+        <th>12-17
+        <td>
+            <button class="BookingBtn" id="b16-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b17-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b18-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b19-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b20-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b21-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b22-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b23-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b24-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b25-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b26-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b27-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b28-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b29-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b30-2" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b31-2" onclick="clickBookingDay(this)"></button>
+
+    <tr>
+        <th>17-22
+        <td>
+            <button class="BookingBtn" id="b16-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b17-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b18-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b19-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b20-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b21-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b22-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b23-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b24-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b25-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b26-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b27-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b28-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b29-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b30-3" onclick="clickBookingDay(this)"></button>
+        <td>
+            <button class="BookingBtn" id="b31-3" onclick="clickBookingDay(this)"></button>
+</table>
+</body>
+</html>

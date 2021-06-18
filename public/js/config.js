@@ -1,0 +1,1 @@
+config = { backendUrl: 'THIS VALUE WILL BE FILLED BY FE SERVER STARTED' };
