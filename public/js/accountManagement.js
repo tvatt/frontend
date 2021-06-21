@@ -86,7 +86,7 @@ function redirectProfileNotLoggedIn () {
 	{
 		window.location.replace("notallowed.html");
 	}
-	if(sessionStorage.getItem("username")=="admin" && $(document).find("title").text()=="User Profile")
+	if(sessionStorage.getItem("username") === "admin" && $(document).find("title").text()=="User Profile")
 	{
 		document.getElementById("btnChangeUsername").classList.add("hidden");
 		document.getElementById("usernameInput").classList.add("hidden");
@@ -95,11 +95,11 @@ function redirectProfileNotLoggedIn () {
 }
 
 function changeUsername() {
-	var input = document.getElementById("usernameInput").value;
-	var params = JSON.stringify({ username: input });
-	xhr = buildXHR("PUT", "/api/user/" + sessionStorage.getItem("userId"), true);
+  const input = document.getElementById("usernameInput").value;
+  const params = JSON.stringify({username: input});
+  xhr = buildXHR("PUT", "/api/user/" + sessionStorage.getItem("userId"), true);
 	xhr.onreadystatechange = function() {
-		if (xhr.readyState == XMLHttpRequest.DONE) {		
+		if (xhr.readyState == XMLHttpRequest.DONE) {
 			if(xhr.status ==200)
 			{
 				logout();
@@ -109,7 +109,7 @@ function changeUsername() {
 			{
 				document.getElementById("changeUsernameWarning").textContent=xhr.status + "   " + xhr.responseText;
 				document.getElementById("changeUsernameWarning").classList.remove("hidden");
-			}	
+			}
 		}
 	};
 	xhr.send(params);
@@ -120,7 +120,7 @@ function changePassword() {
 	var input = document.getElementById("passwordInput").value;
 	var params = JSON.stringify({ password: input });
 	xhr.onreadystatechange = function() {
-		if (xhr.readyState == XMLHttpRequest.DONE) {		
+		if (xhr.readyState == XMLHttpRequest.DONE) {
 			if(xhr.status ==200)
 			{
 				logout();
@@ -147,28 +147,30 @@ function logout() {
 function adminLoadAllUsers () {
 	xhr = buildXHR("GET", "/api/user/", false);
 	xhr.onreadystatechange = function() {
-	if (xhr.readyState == XMLHttpRequest.DONE) {			
+	if (xhr.readyState == XMLHttpRequest.DONE) {
 			if(xhr.status ==200)
 			{
-				var result = JSON.parse(xhr.responseText);
-				
-				//displayUsersInTable(result);
-				var table = document.getElementById("userTable");
-				var i;
-				for (i = 0; i<result.length; i++)
+              const result = JSON.parse(xhr.responseText);
+
+              //displayUsersInTable(result);
+              const table = document.getElementById("userTable");
+              let i;
+              for (i = 0; i<result.length; i++)
 				{
 					//alert(result[i].id + " " + result[i].username + " " + result[i].unitNo);
-					
+
 					var row = table.insertRow(i);
 					var cell1 = row.insertCell(0);
 					cell1.innerHTML=result[i].id;
-					
+
 					var cell2 = row.insertCell(1);
 					var TFusername = document.createElement("INPUT");
+					TFusername.className = 'createUsernameBT';
 					TFusername.id = result[i].id + "username";
 					TFusername.value=result[i].username;
 					cell2.appendChild(TFusername);
 					var BTupdateUsername = document.createElement("BUTTON");
+					BTupdateUsername.className = 'updateButton';
 					BTupdateUsername.innerHTML="Update";
 					cell2.appendChild(BTupdateUsername);
 					BTupdateUsername.addEventListener('click', adminChangeUsername(TFusername, result[i].id));

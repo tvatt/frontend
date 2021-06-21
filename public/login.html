@@ -50,16 +50,22 @@
 
                     <span class="hidden" id="loginWarning">Invalid username or password!</span>
 
-                    <input id="submit" onclick="login()" class="bigBlueButton" value="Log In">
+                    <input type="submit" id="submit" onclick="login()" class="bigBlueButton" value="Log In">
 					<script>
-						var inputText = document.getElementById("passwordInput");
-						inputText.addEventListener("keyup", function(event) {
+                      const inputText = document.getElementById("passwordInput");
+                      inputText.addEventListener("keyup", function(event) {
 							if (event.keyCode === 13) {
 								event.preventDefault();
 								document.getElementById("submit").click();
 							}
 						});
 					</script>
+                </div>
+                <div class="credentials">
+                    <h2>Credentials For Demo</h2>
+                    <p><strong>username: admin    && password: 12345678</strong></p>
+                    <p><strong>username: abdifata && password: 12345678</strong></p>
+                    <p><strong>username: stat1    && password: 12345678</strong></p>
                 </div>
             </section>
         </div>

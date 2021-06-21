@@ -42,3 +42,9 @@ label {
     color: red;
     font-weight: bold
 }
+
+.credentials{
+    float: right;
+    margin-top: -270px;
+    margin-right: 100px;
+}
