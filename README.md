@@ -1,31 +1,7 @@
-Welcome to the frontend of TAVLA, the new booking solution for laundry rooms!
-This documentation only adresses the frontend of the cloud application. To see the backend, please visit: https://github.com/se-tavla/backend
+Welcome to the frontend of tvatt, the new booking solution for laundry rooms!
 
-You can find the application on https://se-hkr-tavla-fe.herokuapp.com/
-There is even a tesing version (Warning: This might be buggy) here: https://se-hkr-tavla-fe-test.herokuapp.com/
-
-# Instructions for editing files (applies to people having access to edit files on our heroku apps)
-Clone the repository (in Command Shell)  
-Production:  
-git clone https://git.heroku.com/se-hkr-tavla-fe.git  
-Test:  
-git clone https://git.heroku.com/se-hkr-tavla-fe-test.git  
-Change into the directory:  
-Production:  
-cd se-hkr-tavla-fe  
-Test:  
-cd se-hkr-tavla-fe-test  
-Change files as needed.  
-If new files are added:  
-git add --all  
-Commit:  
-git commit -am "Name and description of the commit"  
-Push:  
-git push  
-The new version of the app will now be deployed.  
-You might need to log into heroku:  
-heroku login
-
+# live view
+## https://tvatt-frontend.herokuapp.com/
 
 
 # About us:
@@ -34,7 +10,6 @@ Our Group consists of:
 Amer Hard: Backend developer  
 Abdifatah Abdulkadir Ibrahim: Backend developer  
 Jonathan Hoffmann: Frontend developer  
-Marija Rankovic: Frontend developer  
 
 This application was initially developed for the course "Web Applications" by Amer Harb, Marija Rankovic and Suzanne Zomer, but was greatly improved during this course.
 
